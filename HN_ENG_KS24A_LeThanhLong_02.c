@@ -4,6 +4,10 @@ int main(){
 	int arr[n];
 	int chan=0;
 	int le=0;
+	int value;
+	int item;
+	int length=sizeof(arr)/sizeof(arr[0]);
+	int max1,max2;
 	do{
 		printf("\n	MENU	\n");
 		printf("1. Nhap so phan tu va gia tri cho chung\n");
@@ -51,14 +55,47 @@ int main(){
 				}
 				break;
 			case 4:
-				
+				max1=max2=arr[0];
+				for(int i=0;i<6;i++){
+					if(arr[i]>max1){
+						max2=max1;
+						max1=arr[i];
+					}else if(arr[i]>max2 && arr[i]<max1){
+						max2=arr[i];
+					}
+				}
+				printf("Gia tri lon thu hai trong mang la: %d\n",max2);
 				break;
 			case 5:
+				printf("Phan tu muon them la: ");
+				scanf("%d",&value);
+				for(int i=n;i>0;i--){
+					arr[i]=arr[i-1];
+				}
+				arr[0]=value;
+				n++;
+				printf("Phan tu da duoc them vao dau mang\n");
 				break;
 			case 6:
 				break;
 			case 7:
-				break;
+				printf("Moi nhap gia tri can tim kiem ");
+				scanf("%d",&item);
+				int start=0;
+				int end=length-1;
+				int mid;
+				int flag=-1;
+					while(start<=end){
+						mid=(start+end)/2;
+						if(arr[mid]>item){
+							end=mid-1;
+						}else if(arr[mid]<item){
+							start=mid+1;
+						}else{
+							printf("phan tu %d co vi tri la %d",item,mid);
+							break;
+						}
+					}
 			case 8:
 				break;
 			case 9:
