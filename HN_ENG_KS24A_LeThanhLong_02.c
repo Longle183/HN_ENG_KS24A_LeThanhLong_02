@@ -50,9 +50,9 @@ int main(){
 					}else{
 						le++;
 					}
-					printf("So luong phan tu chan la: ",chan);
-					printf("So luong phan tu le la: ",le);
 				}
+				printf("So luong phan tu chan la: %d ",chan);
+				printf("So luong phan tu le la: %d ",le);
 				break;
 			case 4:
 				max1=max2=arr[0];
